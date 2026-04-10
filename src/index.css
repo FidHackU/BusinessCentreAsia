@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  body {
+    @apply bg-primary text-text-primary font-sans;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-accent text-transparent bg-clip-text;
+  }
+  
+  .glass-card {
+    @apply bg-card backdrop-blur-md border border-border rounded-2xl;
+  }
+}
