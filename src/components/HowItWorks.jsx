@@ -57,10 +57,10 @@ const HowItWorks = () => {
             {steps.map((step, i) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: i * 0.15, duration: 0.6 }}
+                transition={{ type: "spring", stiffness: 100, damping: 20 }}
                 className="text-center"
               >
                 <div className="w-16 h-16 mx-auto bg-primary border-2 border-accent rounded-full flex items-center justify-center text-xl font-black text-accent mb-6 relative">

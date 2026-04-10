@@ -16,9 +16,9 @@ const Services = () => {
     <section id="services" className="py-16 lg:py-24 bg-primary relative">
       <div className="max-w-[1200px] mx-auto px-6">
         <SectionHeader 
-          label="Services" 
-          title="End-to-end support for" 
-          titleHighlight="great work" 
+          label="Our Services" 
+          title="From visa to" 
+          titleHighlight="first day" 
           subtitle="Our business centers across Asia handle everything — from paperwork to your first morning coffee."
         />
 
@@ -26,18 +26,28 @@ const Services = () => {
           {services.map((service, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ delay: 0.1, duration: 0.4 }}
-              className="glass-card p-8 group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
+              transition={{ type: 'spring', stiffness: 100, damping: 15 }}
+              whileHover={{ scale: 1.02 }}
+              className="glass-card p-8 group relative overflow-hidden flex flex-col"
             >
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-accent scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300" />
-              <div className="w-14 h-14 rounded-xl bg-accent-subtle flex items-center justify-center mb-6">
-                {service.icon}
+              <div className="w-14 h-14 rounded-xl bg-accent-subtle flex items-center justify-center mb-6 relative overflow-hidden">
+                <div className="absolute inset-0 bg-accent opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                <motion.div 
+                  className="relative z-10"
+                  whileHover={{ rotate: 5, scale: 1.1 }}
+                >
+                  {service.icon}
+                </motion.div>
               </div>
-              <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-              <p className="text-sm text-text-secondary leading-relaxed">{service.desc}</p>
+              
+              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-accent transition-colors duration-300">{service.title}</h3>
+              <p className="text-text-secondary text-sm leading-relaxed flex-grow">
+                {service.desc}
+              </p>
             </motion.div>
           ))}
         </div>
