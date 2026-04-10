@@ -12,8 +12,9 @@ const Countries = () => {
   ];
 
   return (
-    <section id="countries" className="pt-8 pb-16 lg:pt-12 lg:pb-24 bg-primary relative overflow-hidden border-t border-slate-800">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section id="countries" className="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-primary relative overflow-hidden border-t border-slate-800">
+      <div className="max-w-[1200px] mx-auto px-6 w-full">
+        
         <SectionHeader 
           label="Our Reach" 
           title="Opportunities" 
@@ -21,7 +22,7 @@ const Countries = () => {
           subtitle="We connect talent with employers in the fastest-growing tech markets across the continent."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20 mt-16">
+        <div className="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-4 md:gap-6 mb-20 mt-12 lg:mt-16 pb-8 -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:pb-0 w-[calc(100%+3rem)] md:w-full">
           {countries.map((country, i) => (
             <motion.div
               key={i}
@@ -29,7 +30,7 @@ const Countries = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ ease: [0.16, 1, 0.3, 1], duration: 0.6, delay: i * 0.1 }}
-              className="glass-card p-6 flex flex-col justify-end h-[350px] group cursor-default relative overflow-hidden border-slate-700/50"
+              className="glass-card p-6 flex flex-col justify-end h-[350px] w-[85vw] max-w-[320px] md:w-auto md:max-w-none snap-center shrink-0 group cursor-default relative overflow-hidden border-slate-700/50 block"
             >
               <img src={country.image} alt={country.name} className="absolute inset-0 w-full h-full object-cover grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-60 transition-all duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent" />
