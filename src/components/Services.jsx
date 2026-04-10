@@ -24,15 +24,17 @@ const Services = () => {
         />
 
         {/* Mobile Swipe Container / Desktop Grid */}
-        <div className="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-4 md:gap-6 mt-12 lg:mt-16 pb-8 -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:pb-0 w-[calc(100%+3rem)] md:w-full">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6 }}
+          className="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-4 md:gap-6 mt-12 lg:mt-16 pb-8 -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:pb-0 w-[calc(100%+3rem)] md:w-full"
+        >
           
           {services.map((service, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ ease: [0.16, 1, 0.3, 1], duration: 0.6, delay: i * 0.1 }}
               className="glass-card p-6 md:p-8 group relative overflow-hidden flex flex-col w-[85vw] max-w-[320px] md:w-auto md:max-w-none snap-center shrink-0 bg-slate-900/50 border-slate-700/50"
             >
               <div className="w-12 h-12 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
@@ -45,10 +47,10 @@ const Services = () => {
               <p className="text-slate-400 text-sm leading-relaxed flex-grow font-light">
                 {service.desc}
               </p>
-            </motion.div>
+            </div>
           ))}
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );

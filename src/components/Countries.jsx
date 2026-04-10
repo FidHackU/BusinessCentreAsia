@@ -22,14 +22,16 @@ const Countries = () => {
           subtitle="We connect talent with employers in the fastest-growing tech markets across the continent."
         />
 
-        <div className="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-4 md:gap-6 mb-20 mt-12 lg:mt-16 pb-8 -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:pb-0 w-[calc(100%+3rem)] md:w-full">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6 }}
+          className="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-4 md:gap-6 mb-20 mt-12 lg:mt-16 pb-8 -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:pb-0 w-[calc(100%+3rem)] md:w-full"
+        >
           {countries.map((country, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ ease: [0.16, 1, 0.3, 1], duration: 0.6, delay: i * 0.1 }}
               className="glass-card p-6 flex flex-col justify-end h-[350px] w-[85vw] max-w-[320px] md:w-auto md:max-w-none snap-center shrink-0 group cursor-default relative overflow-hidden border-slate-700/50 block"
             >
               <img src={country.image} alt={country.name} className="absolute inset-0 w-full h-full object-cover grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-60 transition-all duration-700 group-hover:scale-105" />
@@ -44,9 +46,9 @@ const Countries = () => {
                 <h4 className="font-serif text-white text-3xl mb-2">{country.name}</h4>
                 <p className="text-sm text-slate-400">{country.status}</p>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
