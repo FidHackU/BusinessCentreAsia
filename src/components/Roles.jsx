@@ -3,38 +3,38 @@ import { SectionHeader } from './HowItWorks';
 
 const Roles = () => {
   const roles = [
-    { icon: '💻', name: 'Frontend Developer' },
-    { icon: '⚙️', name: 'Backend Developer' },
-    { icon: '📱', name: 'Mobile Developer' },
-    { icon: '☁️', name: 'Cloud Engineer' },
-    { icon: '🔐', name: 'Cybersecurity Analyst' },
-    { icon: '📊', name: 'Data Scientist' },
-    { icon: '🤖', name: 'AI / ML Engineer' },
-    { icon: '🛠️', name: 'DevOps Engineer' },
-    { icon: '🧪', name: 'QA Engineer' },
-    { icon: '📐', name: 'Solutions Architect' },
-    { icon: '📈', name: 'Product Manager' },
-    { icon: '🎨', name: 'UX/UI Designer' },
-    { icon: '🗄️', name: 'Database Administrator' },
-    { icon: '🌐', name: 'Full Stack Developer' },
-    { icon: '📡', name: 'Network Engineer' },
-    { icon: '💼', name: 'IT Consultant' },
-    { icon: '⚡', name: 'Site Reliability Eng.' },
-    { icon: '🧠', name: 'Prompt Engineer' },
-    { icon: '🛡️', name: 'Penetration Tester' },
-    { icon: '⛓️', name: 'Blockchain Developer' },
-    { icon: '📦', name: 'Release Manager' },
-    { icon: '⚙️', name: 'Systems Administrator' },
-    { icon: '📋', name: 'Scrum Master' },
-    { icon: '📈', name: 'Business Analyst' },
-    { icon: '📱', name: 'iOS Developer' },
-    { icon: '🤖', name: 'Android Developer' },
-    { icon: '🔌', name: 'IoT Engineer' },
-    { icon: '💡', name: 'Tech Lead' },
-    { icon: '📊', name: 'Data Engineer' },
-    { icon: '🧮', name: 'Machine Learning Eng.' },
-    { icon: '🧊', name: 'Web3 Developer' },
-    { icon: '🖥️', name: 'Enterprise Architect' },
+    { name: 'Frontend Developer' },
+    { name: 'Backend Developer' },
+    { name: 'Mobile Developer' },
+    { name: 'Cloud Engineer' },
+    { name: 'Cybersecurity Analyst' },
+    { name: 'Data Scientist' },
+    { name: 'AI / ML Engineer' },
+    { name: 'DevOps Engineer' },
+    { name: 'QA Engineer' },
+    { name: 'Solutions Architect' },
+    { name: 'Product Manager' },
+    { name: 'UX/UI Designer' },
+    { name: 'Database Administrator' },
+    { name: 'Full Stack Developer' },
+    { name: 'Network Engineer' },
+    { name: 'IT Consultant' },
+    { name: 'Site Reliability Eng.' },
+    { name: 'Prompt Engineer' },
+    { name: 'Penetration Tester' },
+    { name: 'Blockchain Developer' },
+    { name: 'Release Manager' },
+    { name: 'Systems Administrator' },
+    { name: 'Scrum Master' },
+    { name: 'Business Analyst' },
+    { name: 'iOS Developer' },
+    { name: 'Android Developer' },
+    { name: 'IoT Engineer' },
+    { name: 'Tech Lead' },
+    { name: 'Data Engineer' },
+    { name: 'Machine Learning Eng.' },
+    { name: 'Web3 Developer' },
+    { name: 'Enterprise Architect' },
   ];
 
   // Split roles into four rows for an ultra-dense, impressive visual footprint
@@ -44,29 +44,27 @@ const Roles = () => {
   const row4 = roles.slice(24, 32);
 
   const RoleTag = ({ role }) => (
-    <div className="px-6 py-3.5 bg-[#080b1c] backdrop-blur-md border border-white/[0.04] rounded-full text-text-primary text-sm font-medium flex items-center gap-3 hover:border-accent/30 hover:-translate-y-1 hover:shadow-lg transition-all cursor-default relative overflow-hidden group">
-      <div className="absolute inset-0 bg-gradient-accent opacity-0 group-hover:opacity-10 transition-opacity"></div>
-      <span className="text-lg">{role.icon}</span>
-      <span className="whitespace-nowrap">{role.name}</span>
+    <div className="px-6 py-3 bg-white/5 border border-white/10 rounded-full text-white text-sm font-medium flex items-center justify-center hover:bg-white hover:text-black transition-colors min-w-[200px] cursor-default whitespace-nowrap">
+      {role.name}
     </div>
   );
 
   return (
-    <section id="roles" className="py-16 lg:py-24 bg-primary relative overflow-hidden">
+    <section id="roles" className="pt-8 pb-16 lg:pt-12 lg:py-24 bg-primary relative overflow-hidden border-t border-white/5">
       <div className="max-w-[1200px] mx-auto px-6">
         <SectionHeader 
           label="Roles We Place" 
           title="We place top" 
-          titleHighlight="IT talent" 
-          subtitle="Whether you're a developer, consultant, or specialist — we have opportunities waiting for you across Asia."
+          titleHighlight="IT talent." 
+          subtitle="Whether you're a developer, consultant, or specialist — we have opportunities waiting for you."
         />
 
         {/* Marquee Wrapper with touch-pan-y to explicitly allow vertical scrolling on touch devices */}
         <motion.div 
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="relative mt-16 w-full md:mx-auto md:max-w-6xl touch-pan-y"
         >
           {/* Subtle gradient fading masks on the edges to make it look smooth */}

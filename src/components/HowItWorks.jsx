@@ -41,8 +41,8 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section id="how" className="py-16 lg:py-24 relative bg-secondary border-t border-border">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section id="how" className="pt-8 pb-16 lg:pt-12 lg:pb-24 relative bg-secondary border-t border-border">
+      <div className="max-w-[900px] mx-auto px-6">
         <SectionHeader 
           label="How It Works" 
           title="From application to" 
@@ -50,28 +50,25 @@ const HowItWorks = () => {
           subtitle="Our team manages the entire process so you can focus on what matters: your career."
         />
         
-        <div className="relative mt-20">
-          <div className="hidden lg:block absolute top-7 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-accent to-border z-0" />
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
-            {steps.map((step, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ type: "spring", stiffness: 100, damping: 20 }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 mx-auto bg-primary border-2 border-accent rounded-full flex items-center justify-center text-xl font-black text-accent mb-6 relative">
-                  {step.num}
-                  <div className="absolute -inset-1.5 border border-accent/20 rounded-full" />
-                </div>
-                <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                <p className="text-sm text-text-secondary leading-relaxed">{step.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+        <div className="flex flex-col gap-8 mt-16">
+          {steps.map((step, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ ease: [0.16, 1, 0.3, 1], duration: 0.6, delay: i * 0.1 }}
+              className="glass-card p-8 flex flex-col md:flex-row items-start md:items-center gap-8 group"
+            >
+              <div className="shrink-0 w-16 h-16 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-2xl font-mono text-white group-hover:bg-white group-hover:text-black transition-colors duration-300">
+                0{step.num}
+              </div>
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold mb-2 text-white">{step.title}</h3>
+                <p className="text-base text-text-muted leading-relaxed">{step.desc}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

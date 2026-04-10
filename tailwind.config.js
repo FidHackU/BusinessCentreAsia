@@ -6,30 +6,31 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#060918',
-        secondary: '#080b1c',
+        primary: '#0f172a', // Slate 900
+        secondary: '#1e293b', // Slate 800
         accent: {
-          DEFAULT: "#f97316",
-          hover: "#fb923c",
-          subtle: "rgba(249, 115, 22, 0.08)",
-          glow: "rgba(249, 115, 22, 0.3)",
+          DEFAULT: "#3b82f6", // Blue 500
+          hover: "#60a5fa", // Blue 400
+          subtle: "rgba(59, 130, 246, 0.1)",
+          glow: "rgba(59, 130, 246, 0.25)",
         },
-        glass: "rgba(255, 255, 255, 0.03)",
-        card: '#080b1c',
-        border: 'rgba(255, 255, 255, 0.04)',
+        glass: "rgba(255, 255, 255, 0.05)",
+        card: '#1e293b',
+        border: 'rgba(255, 255, 255, 0.08)',
         text: {
-          primary: "#f1f5f9",
+          primary: "#f8fafc",
           secondary: "#94a3b8",
           muted: "#64748b",
         }
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        serif: ['"Playfair Display"', 'serif'],
       },
       backgroundImage: {
-        'gradient-hero': "linear-gradient(135deg, #060918 0%, #0f1535 40%, #131a45 70%, #0a1025 100%)",
-        'gradient-accent': "linear-gradient(135deg, #f97316 0%, #ef4444 100%)",
-        'gradient-card': "linear-gradient(135deg, rgba(17, 22, 64, 0.6) 0%, rgba(10, 15, 40, 0.8) 100%)",
+        'gradient-hero': "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+        'gradient-accent': "linear-gradient(135deg, #3b82f6 0%, #6366f1 100%)",
+        'gradient-card': "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
       },
       animation: {
         'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
