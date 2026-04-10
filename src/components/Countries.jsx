@@ -21,15 +21,15 @@ const Countries = () => {
           subtitle="We connect talent with employers in the fastest-growing tech markets across the continent."
         />
 
-        <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 sm:gap-6 mb-16 pb-4 -mx-6 px-6 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-3 sm:pb-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
           {countries.map((country, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.4 }}
-              className="glass-card p-6 flex flex-shrink-0 items-center gap-5 hover:-translate-y-1 hover:border-accent/30 transition-all cursor-default snap-center w-[85vw] sm:w-auto sm:min-w-0"
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ delay: 0.1, duration: 0.4 }}
+              className="glass-card p-6 flex items-center gap-5 hover:-translate-y-1 hover:border-accent/30 transition-all cursor-default"
             >
               <span className="text-4xl">{country.flag}</span>
               <div>

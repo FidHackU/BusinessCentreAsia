@@ -22,15 +22,15 @@ const Services = () => {
           subtitle="Our business centers across Asia handle everything — from paperwork to your first morning coffee."
         />
 
-        <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 mt-12 pb-8 -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 md:overflow-visible lg:grid-cols-3 md:pb-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 gap-6 mt-12">
           {services.map((service, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="glass-card p-8 group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden snap-center min-w-[85vw] sm:min-w-[400px] md:min-w-0"
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ delay: 0.1, duration: 0.4 }}
+              className="glass-card p-8 group hover:-translate-y-2 transition-all duration-300 relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-accent scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300" />
               <div className="w-14 h-14 rounded-xl bg-accent-subtle flex items-center justify-center mb-6">
