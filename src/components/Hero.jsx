@@ -2,11 +2,13 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex text-center lg:text-left items-center bg-gradient-hero overflow-hidden pt-28 pb-16 lg:pt-32 lg:pb-24 px-6">
-      {/* Background Orbs removed for strict corporate aesthetic */}
-      
-      {/* Subtle Grid overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.03)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_at_50%_50%,black_30%,transparent_70%)] pointer-events-none" />
+    <section className="relative min-h-screen flex text-center lg:text-left items-center bg-primary overflow-hidden pt-28 pb-16 lg:pt-32 lg:pb-24 px-6">
+      {/* Master Background Image with Cinematic Lighting and Deep Navy Overlay */}
+      <div className="absolute inset-0 z-0 select-none pointer-events-none">
+        <img src="/images/hero_abstract_tech_1775828147686.png" className="w-full h-full object-cover object-center opacity-75 mix-blend-screen" alt="Asian Tech Network" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#060918]/60 via-[#060918]/80 to-primary" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(249,115,22,0.1),transparent_50%)]" />
+      </div>
 
       <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
         

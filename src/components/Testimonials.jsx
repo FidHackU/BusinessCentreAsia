@@ -4,9 +4,9 @@ import { FiStar } from 'react-icons/fi';
 
 const Testimonials = () => {
   const reviews = [
-    { name: 'Arjun R.', role: 'Full Stack Developer', path: 'India → Singapore', quote: "I applied on a Monday and had three interview calls by Thursday. Within 6 weeks, I was working in Singapore with my visa fully sorted. BusinessCentres.Asia literally handled everything.", initials: 'AR' },
-    { name: 'Maria L.', role: 'Cloud Engineer', path: 'Philippines → Japan', quote: "The relocation support was incredible. From finding my apartment to setting up a bank account — I didn't have to worry about anything except doing my job well.", initials: 'ML' },
-    { name: 'Tuan N.', role: 'Backend Developer', path: 'Vietnam → South Korea', quote: "As a developer from Vietnam, getting a work permit in South Korea seemed impossible. BusinessCentres.Asia made it happen in under 2 months. Game-changer.", initials: 'TN' },
+    { name: 'Arjun R.', role: 'Full Stack Developer', path: 'India → Singapore', quote: "I applied on a Monday and had three interview calls by Thursday. Within 6 weeks, I was working in Singapore with my visa fully sorted. BusinessCentres.Asia literally handled everything.", image: '/images/avatar_arjun_1775828161560.png' },
+    { name: 'Maria L.', role: 'Cloud Engineer', path: 'Philippines → Japan', quote: "The relocation support was incredible. From finding my apartment to setting up a bank account — I didn't have to worry about anything except doing my job well.", image: '/images/avatar_maria_1775828178652.png' },
+    { name: 'Tuan N.', role: 'Backend Developer', path: 'Vietnam → South Korea', quote: "As a developer from Vietnam, getting a work permit in South Korea seemed impossible. BusinessCentres.Asia made it happen in under 2 months. Game-changer.", image: '/images/avatar_tuan_1775828196266.png' },
   ];
 
   return (
@@ -41,14 +41,12 @@ const Testimonials = () => {
                 {[...Array(5)].map((_, j) => <FiStar key={j} className="fill-current w-4 h-4" />)}
               </div>
               
-              <p className="text-text-secondary text-base leading-relaxed mb-10 flex-grow relative z-10 group-hover:text-gray-300 transition-colors duration-300">
+              <p className="text-gray-200 text-[1.05rem] leading-relaxed mb-10 flex-grow relative z-10 font-medium group-hover:text-white transition-colors duration-300">
                 "{review.quote}"
               </p>
               
-              <div className="flex items-center gap-4 pt-6 mt-auto border-t border-white/[0.05] relative z-10 group-hover:border-white/[0.1] transition-colors duration-300">
-                <div className="w-11 h-11 rounded-full bg-[#12183a] border border-white/5 flex items-center justify-center text-xs font-bold text-white shadow-sm tracking-wider">
-                  {review.initials}
-                </div>
+              <div className="flex items-center gap-4 pt-6 mt-auto border-t border-white/[0.08] relative z-10 group-hover:border-white/[0.15] transition-colors duration-300">
+                <img src={review.image} alt={review.name} className="w-12 h-12 rounded-full border border-white/10 shadow-lg object-cover bg-[#12183a]" />
                 <div>
                   <h4 className="font-bold text-sm text-white mb-0.5">{review.name}</h4>
                   <p className="text-xs text-text-muted">{review.role} <span className="text-accent/50 mx-1">•</span> {review.path}</p>
