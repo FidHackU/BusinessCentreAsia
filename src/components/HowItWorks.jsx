@@ -16,9 +16,9 @@ const SectionHeader = ({ label, title, titleHighlight, subtitle }) => (
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ delay: 0.1 }}
-      className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6"
+      className="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight"
     >
-      {title} <span className="text-gradient">{titleHighlight}</span>
+      {title} <span className="text-gradient pb-1">{titleHighlight}</span>
     </motion.h2>
     <motion.p 
       initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section id="how" className="py-24 relative bg-secondary border-t border-border">
+    <section id="how" className="py-16 lg:py-24 relative bg-secondary border-t border-border">
       <div className="max-w-[1200px] mx-auto px-6">
         <SectionHeader 
           label="How It Works" 

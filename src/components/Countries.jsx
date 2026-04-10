@@ -12,7 +12,7 @@ const Countries = () => {
   ];
 
   return (
-    <section id="countries" className="py-24 bg-secondary border-y border-border">
+    <section id="countries" className="py-16 lg:py-24 bg-secondary border-y border-border">
       <div className="max-w-[1200px] mx-auto px-6">
         <SectionHeader 
           label="Countries" 
@@ -21,7 +21,7 @@ const Countries = () => {
           subtitle="We connect talent with employers in the fastest-growing tech markets across the continent."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-4 sm:gap-6 mb-16 pb-4 -mx-6 px-6 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 sm:overflow-visible lg:grid-cols-3 sm:pb-0">
           {countries.map((country, i) => (
             <motion.div
               key={i}
@@ -29,7 +29,7 @@ const Countries = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.4 }}
-              className="bg-[#111640]/50 backdrop-blur-sm border border-border rounded-2xl p-6 flex items-center gap-5 hover:-translate-y-1 hover:border-accent/40 transition-all cursor-default shadow-sm hover:shadow-xl"
+              className="glass-card p-6 flex flex-shrink-0 items-center gap-5 hover:-translate-y-1 hover:border-accent/30 transition-all cursor-default snap-center w-[85vw] sm:w-auto sm:min-w-0"
             >
               <span className="text-4xl">{country.flag}</span>
               <div>

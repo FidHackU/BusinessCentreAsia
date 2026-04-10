@@ -10,7 +10,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-24 bg-primary relative">
+    <section id="testimonials" className="py-16 lg:py-24 bg-primary relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6">
         <SectionHeader 
           label="Success Stories" 
@@ -19,29 +19,39 @@ const Testimonials = () => {
           subtitle="Don't just take our word for it — hear from IT professionals who've made the move."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 mb-24">
+        <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 mt-12 mb-16 pb-8 -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:overflow-visible md:pb-0">
           {reviews.map((review, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: i * 0.15, duration: 0.5 }}
-              className="glass-card p-8 flex flex-col h-full hover:border-border/80 transition-colors"
+              className="group relative p-8 md:p-10 flex flex-col h-full bg-[#080b1c] rounded-3xl border border-white/[0.04] hover:bg-[#0a0e24] transition-all duration-300 snap-center min-w-[85vw] sm:min-w-[400px] md:min-w-0 overflow-hidden"
             >
-              <div className="flex gap-1 text-accent mb-6">
-                {[...Array(5)].map((_, j) => <FiStar key={j} className="fill-current" />)}
+              {/* Premium top accent border that expands on hover */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              {/* Massive decorative quote mark */}
+              <div className="absolute top-4 right-6 text-[8rem] font-serif leading-none text-white/[0.02] select-none pointer-events-none group-hover:text-accent/[0.05] transition-colors duration-500">
+                &rdquo;
               </div>
-              <p className="text-text-primary text-lg leading-relaxed mb-8 flex-grow font-medium">
+
+              <div className="flex gap-1 text-accent mb-6 relative z-10">
+                {[...Array(5)].map((_, j) => <FiStar key={j} className="fill-current w-4 h-4" />)}
+              </div>
+              
+              <p className="text-text-secondary text-base leading-relaxed mb-10 flex-grow relative z-10 group-hover:text-gray-300 transition-colors duration-300">
                 "{review.quote}"
               </p>
-              <div className="flex items-center gap-4 pt-6 border-t border-border">
-                <div className="w-10 h-10 rounded-full bg-gradient-accent flex items-center justify-center font-bold text-white shadow-lg">
+              
+              <div className="flex items-center gap-4 pt-6 mt-auto border-t border-white/[0.05] relative z-10 group-hover:border-white/[0.1] transition-colors duration-300">
+                <div className="w-11 h-11 rounded-full bg-[#12183a] border border-white/5 flex items-center justify-center text-xs font-bold text-white shadow-sm tracking-wider">
                   {review.initials}
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm text-white">{review.name}</h4>
-                  <p className="text-xs text-text-muted">{review.role} • {review.path}</p>
+                  <h4 className="font-bold text-sm text-white mb-0.5">{review.name}</h4>
+                  <p className="text-xs text-text-muted">{review.role} <span className="text-accent/50 mx-1">•</span> {review.path}</p>
                 </div>
               </div>
             </motion.div>
@@ -58,17 +68,9 @@ const Testimonials = () => {
           {/* Top glowing line */}
           <div className="absolute top-0 inset-x-8 h-[2px] bg-gradient-accent shadow-[0_0_15px_rgba(249,115,22,0.7)]" />
           
-          {/* Breathing Animated Background Glows */}
-          <motion.div 
-            animate={{ scale: [1, 1.2, 1], opacity: [0.15, 0.3, 0.15] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-40 -left-40 w-80 h-80 bg-accent blur-[80px] rounded-full pointer-events-none z-0" 
-          />
-          <motion.div 
-            animate={{ scale: [1, 1.25, 1], opacity: [0.1, 0.2, 0.1] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute -bottom-40 -right-40 w-80 h-80 bg-indigo-500 blur-[80px] rounded-full pointer-events-none z-0" 
-          />
+          {/* Breathing Animated Background Glows (Hardware Accelerated CSS) */}
+          <div className="absolute -top-40 -left-40 w-80 h-80 bg-accent blur-[80px] rounded-full pointer-events-none z-0 animate-breathe transform-gpu" />
+          <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-indigo-500 blur-[80px] rounded-full pointer-events-none z-0 animate-breathe transform-gpu" style={{ animationDelay: '1.5s', animationDuration: '7s' }} />
           
           <div className="relative z-10 mt-4">
             <h2 className="text-3xl md:text-[2.75rem] font-black mb-6 tracking-tight leading-tight">

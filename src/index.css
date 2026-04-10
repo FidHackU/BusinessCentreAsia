@@ -22,6 +22,17 @@
   }
   
   .glass-card {
-    @apply bg-card backdrop-blur-md border border-border rounded-2xl;
+    @apply bg-[#080b1c] rounded-[1.75rem] border border-white/[0.04] transition-all duration-300 relative overflow-hidden;
+  }
+  .glass-card:hover {
+    @apply bg-[#0a0e24] shadow-2xl;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }

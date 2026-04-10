@@ -2,10 +2,8 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-hero overflow-hidden pt-32 pb-24 px-6">
-      {/* Background Orbs */}
-      <div className="absolute -top-24 -right-24 w-[500px] h-[500px] bg-accent/15 blur-[80px] rounded-full animate-float pointer-events-none" />
-      <div className="absolute -bottom-12 -left-24 w-[400px] h-[400px] bg-indigo-500/10 blur-[80px] rounded-full animate-float pointer-events-none" style={{ animationDirection: 'reverse', animationDuration: '10s' }} />
+    <section className="relative min-h-screen flex text-center lg:text-left items-center bg-gradient-hero overflow-hidden pt-28 pb-16 lg:pt-32 lg:pb-24 px-6">
+      {/* Background Orbs removed for strict corporate aesthetic */}
       
       {/* Subtle Grid overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(148,163,184,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.03)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_at_50%_50%,black_30%,transparent_70%)] pointer-events-none" />
@@ -24,13 +22,13 @@ const Hero = () => {
             Now placing talent across 6 countries
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-6">
+          <h1 className="text-[2.75rem] leading-[1.05] md:text-6xl lg:text-7xl font-black tracking-tight mb-6">
             <span className="block">Your next</span>
-            <span className="block text-gradient">career in Asia</span>
+            <span className="block text-gradient pb-1">career in Asia</span>
             <span className="block">starts here.</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-text-secondary leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0">
+          <p className="text-base md:text-xl text-text-secondary leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0">
             From visa processing to workplace setup — we connect international IT professionals with top opportunities in Singapore and across Asia. You focus on your skills, we take care of the rest.
           </p>
 
@@ -44,7 +42,7 @@ const Hero = () => {
           </div>
 
           {/* Stats */}
-          <div className="flex justify-center lg:justify-start gap-8 sm:gap-12">
+          <div className="grid grid-cols-2 lg:flex lg:justify-start gap-x-4 gap-y-8 sm:gap-12 mt-4 text-left">
             {[
               { number: '2,500+', label: 'Professionals Placed' },
               { number: '98%', label: 'Visa Approval Rate', isAccent: true },
